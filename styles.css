@@ -1,5 +1,5 @@
 .navbar {
-    background-color: red;
+    background-color: grey;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,7 +13,6 @@
     color: white;
     text-decoration: none;
     font-size: 2.5vh;
-    font-family: SFPDRegular;
 }
 
 .navbar img {
