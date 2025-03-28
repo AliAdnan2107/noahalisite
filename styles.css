@@ -1,12 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white
+}
+
 .navbar {
     background-color: grey;
+    position: sticky;
+    height: 4vh;
+    top: 0;
+
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.5vh;
-    flex-wrap: nowrap;
     flex: auto;
-    height: 4vh;
 }
 
 .navbar a {
@@ -16,7 +26,17 @@
 }
 
 .navbar img {
-    height: 3vh;
     width: 3vh;
-    margin-right: auto;
+}
+
+.Body1 {
+    padding-left: 2vh;
+    padding-right: 2vh;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex: auto;
+    gap: 2vh;
 }
