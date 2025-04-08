@@ -7,6 +7,29 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     
     <title>NoahAliCollab</title>
+
+    <style>
+        #special {
+            color: white;
+        }
+        
+    </style>
+
+    <script>
+        let dfont = 20;
+
+        function addHTML() {
+            document.getElementById("specialHTML").innerHTML += "<br>" + "WE ADDED CONTENT!";
+        }
+
+        function addCSS() {
+            dfont **= 2;
+            document.getElementById("specialCSS").style.color = "white";
+            document.getElementById("specialCSS").style.fontSize = dfont + "px";
+            document.getElementById("specialCSS").style.fontWeight = "bold";
+            console.log(dfont);
+        }
+    </script>
 </head>
 
 <body>
@@ -24,7 +47,24 @@
                 <li><a href="#">Item 8</a></li>
             </ul>
         </nav>
+        <div class="special-container">
+            <p id="specialHTML">
+                Welcome to NoahAliCollab <br>
+                This is a project between Noah & Ali. <br>
+                We are excited to share our work!
+            </p>
 
+            <p id="specialCSS">
+                Special CSS Section <br>
+                This section is styled with CSS. <br>
+                We hope you enjoy the design!
+            </p>
+        </div>
+
+        <div class="button-container">
+            <button onclick="addHTML()">Wonder what this does?</button>
+            <button onclick="addCSS()">Wonder what this does?</button>
+        </div>
     </div>
 </body>
 </html>

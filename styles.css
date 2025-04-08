@@ -44,3 +44,16 @@ a:hover {
 .flex-nav li {
     flex: 1;    
 }
+
+.special-container {
+    text-align: center;
+    font-size: 20px;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-evenly;
+}
