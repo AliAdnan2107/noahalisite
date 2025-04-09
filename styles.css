@@ -56,3 +56,15 @@ a:hover {
     display: flex;
     justify-content: space-evenly;
 }
+
+.interactiveJS {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.interactiveJS1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

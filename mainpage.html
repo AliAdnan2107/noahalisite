@@ -18,12 +18,20 @@
     <script>
         let isbold = false;
 
+        function subHTML() {
+            document.getElementById("specialHTML").innerHTML = "BEGONE!!" + "<br>" 
+            + "<br>" + "<button onclick='addHTML()'>Wonder what this does?</button>";
+        }
+
         function addHTML() {
-            document.getElementById("specialHTML").innerHTML += "<br>" + "WE ADDED CONTENT!";
+            document.getElementById("specialHTML").innerHTML = "Welcome to NoahAliCollab <br>" +
+                "This is a project between Noah & Ali. <br>" +
+                "We are excited to share our work! <br><br>" +
+                "<button onclick='subHTML()'>Wonder what this does?</button>";
         }
 
         function addCSS() {
-            if (isbold == false) {
+            if (isbold == false) {  
                 document.getElementById("specialCSS").style.fontWeight = "bold";
                 document.getElementById("specialCSS").style.color = "black";
                 isbold = true;
@@ -33,6 +41,33 @@
                 document.getElementById("specialCSS").style.color = "white";
                 isbold = false;
             }
+        }
+
+        function addJS() {
+            var x = document.getElementById("numJS").value;
+            y = parseFloat(x);
+            if (isNaN(y)) {
+                document.getElementById("resultJS").innerHTML = "Please enter a valid number.";
+                document.getElementById("resultJS").style.color = "";
+                document.getElementById("resultJS").style.fontSize = "";
+            } else if (y >= 10) {
+                document.getElementById("resultJS").innerHTML = "That's Huge!!";
+                document.getElementById("resultJS").style.color = "red";
+                document.getElementById("resultJS").style.fontSize = "30px";
+            } else if (y < 10) {
+                document.getElementById("resultJS").innerHTML = "That's Small!!";
+                document.getElementById("resultJS").style.color = "blue";
+                document.getElementById("resultJS").style.fontSize = "10px";
+            } else {
+                document.getElementById("resultJS").innerHTML = "Please enter a valid number.";
+                document.getElementById("resultJS").style.color = "";
+                document.getElementById("resultJS").style.fontSize = "";
+
+            }
+        }
+
+        function addJS2() {
+            var i = 0
         }
     </script>
 </head>
@@ -56,18 +91,37 @@
             <p id="specialHTML">
                 Welcome to NoahAliCollab <br>
                 This is a project between Noah & Ali. <br>
-                We are excited to share our work! <br>
-                <button onclick="addHTML()">Wonder what this does?</button>
+                We are excited to share our work! <br><br>
+                <button onclick="subHTML()">Wonder what this does?</button>
             </p>
 
             <p id="specialCSS">
                 Special CSS Section <br>
                 This section is styled with CSS. <br>
-                We hope you enjoy the design! <br>
+                We hope you enjoy the design! <br><br>
                 <button onclick="addCSS()">Wonder what this does?</button>
             </p>
-
         </div>
+
+        <hr>
+
+        <div class="interactiveJS">
+            <div class="interactiveJS1">
+                <p>
+                    <input type="numJS" id="numJS" name="numJS" placeholder="Enter a number"><br><br>
+                    <button onclick="addJS()">Wonder what this does?</button>
+                </p>
+                <p id="resultJS"></p>
+            </div>
+            <div class="interactiveJS2">
+                <p>
+                    <input type="numJS2" id="numJS2" name="numJS2" placeholder="Enter a number"><br><br>
+                    <button onclick="addJS2()">Wonder what this does?</button>
+                </p>
+                <p id="resultJS2"></p>
+            </div>
+        </div>
+
     </div>
 </body>
 </html>
