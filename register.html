@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Noah Rashed, Ali Adnan">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <title>NoahAliCollab-Account</title>
+
+    <script>
+        function storeUserData(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+    
+            const userData = { email, username, password };
+            localStorage.setItem('userData', JSON.stringify(userData));
+    
+            alert('Registration successful!');
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <nav class="flex-nav">
+            <ul>
+                <li><a href="../noahalisite/mainpage.html">Home</a></li>
+                <li><a href="../noahalisite/account.html">Account</a></li>
+                <li><a href="#">Item 3</a></li>
+                <li><a href="#">Item 4</a></li>
+                <li><a href="#">Item 5</a></li>
+                <li><a href="#">Item 6</a></li>
+                <li><a href="#">Item 7</a></li>
+                <li><a href="#">Item 8</a></li>
+            </ul>
+        </nav>
+        <div class="register">
+            <h1>Register</h1>
+            <form action="register.php" method="post">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username"><br><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"><br><br>
+                <input type="submit" value="Register">
+            </form>
+            <p>Already have an account?</p>
+            <a href="account.html">Login here</a>
+        </div>
+    </div>
+</body>
+</html>

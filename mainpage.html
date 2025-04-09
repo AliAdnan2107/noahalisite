@@ -16,18 +16,23 @@
     </style>
 
     <script>
-        let dfont = 20;
+        let isbold = false;
 
         function addHTML() {
             document.getElementById("specialHTML").innerHTML += "<br>" + "WE ADDED CONTENT!";
         }
 
         function addCSS() {
-            dfont **= 2;
-            document.getElementById("specialCSS").style.color = "white";
-            document.getElementById("specialCSS").style.fontSize = dfont + "px";
-            document.getElementById("specialCSS").style.fontWeight = "bold";
-            console.log(dfont);
+            if (isbold == false) {
+                document.getElementById("specialCSS").style.fontWeight = "bold";
+                document.getElementById("specialCSS").style.color = "black";
+                isbold = true;
+            }
+            else if (isbold == true) {
+                document.getElementById("specialCSS").style.fontWeight = "normal";
+                document.getElementById("specialCSS").style.color = "white";
+                isbold = false;
+            }
         }
     </script>
 </head>
@@ -37,8 +42,8 @@
 
         <nav class="flex-nav">
             <ul>
-                <li><a href="#">Item 1</a></li>
-                <li><a href="#">Item 2</a></li>
+                <li><a href="../noahalisite/mainpage.html">Home</a></li>
+                <li><a href="../noahalisite/account.html">Account</a></li>
                 <li><a href="#">Item 3</a></li>
                 <li><a href="#">Item 4</a></li>
                 <li><a href="#">Item 5</a></li>
@@ -51,19 +56,17 @@
             <p id="specialHTML">
                 Welcome to NoahAliCollab <br>
                 This is a project between Noah & Ali. <br>
-                We are excited to share our work!
+                We are excited to share our work! <br>
+                <button onclick="addHTML()">Wonder what this does?</button>
             </p>
 
             <p id="specialCSS">
                 Special CSS Section <br>
                 This section is styled with CSS. <br>
-                We hope you enjoy the design!
+                We hope you enjoy the design! <br>
+                <button onclick="addCSS()">Wonder what this does?</button>
             </p>
-        </div>
 
-        <div class="button-container">
-            <button onclick="addHTML()">Wonder what this does?</button>
-            <button onclick="addCSS()">Wonder what this does?</button>
         </div>
     </div>
 </body>
