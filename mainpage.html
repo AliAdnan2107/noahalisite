@@ -43,31 +43,48 @@
             }
         }
 
-        function addJS() {
-            var x = document.getElementById("numJS").value;
+        function NumberSizer() {
+            var x = document.getElementById("NumSize").value;
             y = parseFloat(x);
             if (isNaN(y)) {
-                document.getElementById("resultJS").innerHTML = "Please enter a valid number.";
-                document.getElementById("resultJS").style.color = "";
-                document.getElementById("resultJS").style.fontSize = "";
+                document.getElementById("ResultNS").innerHTML = "Please enter a valid number.";
+                document.getElementById("ResultNS").style.color = "";
+                document.getElementById("ResultNS").style.fontSize = "";
             } else if (y >= 10) {
-                document.getElementById("resultJS").innerHTML = "That's Huge!!";
-                document.getElementById("resultJS").style.color = "red";
-                document.getElementById("resultJS").style.fontSize = "30px";
+                document.getElementById("ResultNS").innerHTML = "That's Huge!!";
+                document.getElementById("ResultNS").style.color = "red";
+                document.getElementById("ResultNS").style.fontSize = "30px";
             } else if (y < 10) {
-                document.getElementById("resultJS").innerHTML = "That's Small!!";
-                document.getElementById("resultJS").style.color = "blue";
-                document.getElementById("resultJS").style.fontSize = "10px";
+                document.getElementById("ResultNS").innerHTML = "That's Small!!";
+                document.getElementById("ResultNS").style.color = "blue";
+                document.getElementById("ResultNS").style.fontSize = "10px";
             } else {
-                document.getElementById("resultJS").innerHTML = "Please enter a valid number.";
-                document.getElementById("resultJS").style.color = "";
-                document.getElementById("resultJS").style.fontSize = "";
+                document.getElementById("ResultNS").innerHTML = "Please enter a valid number.";
+                document.getElementById("ResultNS").style.color = "";
+                document.getElementById("ResultNS").style.fontSize = "";
 
             }
         }
 
-        function addJS2() {
-            var i = 0
+        function ForLooper() {
+            var x = document.getElementById("ForLoop").value;
+            document.getElementById("ResultFL").innerHTML = "";
+            for (i=1; i<=x; i++) {
+                document.getElementById("ResultFL").innerHTML += "The number is " + i + "<br>";
+            }
+        }
+
+        function DoLooper() {
+            do {
+                var x = prompt("Enter a number between 1 and 10");
+                var y = parseInt(x);
+                if (y != 5) {
+                    document.getElementById("ResultDL").innerHTML = "NomNomNom";
+                    break;
+                } else if (y == 5) {
+                    document.getElementById("ResultDL").innerHTML = "You got it!";
+                }
+            } while (y != 5);
         }
     </script>
 </head>
@@ -87,6 +104,7 @@
                 <li><a href="#">Item 8</a></li>
             </ul>
         </nav>
+
         <div class="special-container">
             <p id="specialHTML">
                 Welcome to NoahAliCollab <br>
@@ -104,23 +122,39 @@
         </div>
 
         <hr>
-
-        <div class="interactiveJS">
-            <div class="interactiveJS1">
-                <p>
-                    <input type="numJS" id="numJS" name="numJS" placeholder="Enter a number"><br><br>
-                    <button onclick="addJS()">Wonder what this does?</button>
-                </p>
-                <p id="resultJS"></p>
+        
+        <div class="JS1container">
+            <div class="JS1-1container">
+                <p><input type="NumSize" id="NumSize" placeholder="Enter a number"><br><br>
+                    <button onclick="NumberSizer()">Wonder what this does?</button></p>
+                <p id="ResultNS"></p>
             </div>
-            <div class="interactiveJS2">
-                <p>
-                    <input type="numJS2" id="numJS2" name="numJS2" placeholder="Enter a number"><br><br>
-                    <button onclick="addJS2()">Wonder what this does?</button>
-                </p>
-                <p id="resultJS2"></p>
+
+            <div class="JS1-2container">
+                <p><input type="ForLoop" id="ForLoop" placeholder="Enter a number"><br><br>
+                <button onclick="ForLooper()">Wonder what this does?</button></p>
+                <p id="ResultFL"></p>
             </div>
         </div>
+
+        <hr>
+
+        <div class="JS2container">
+            <div>
+                <button onclick="DoLooper()">Wonder what this does?</button></p>
+                <p id="ResultDL"></p>
+            </div>
+
+            <div class="JS2-1container">
+                <p>Special JS Section<br>
+                    This section is styled with JS.<br>
+                    We hope you enjoy the design!<br><br>
+                </p>
+                <p id="ResultJS"></p>
+            </div>
+        </div>
+
+        <hr>
 
     </div>
 </body>
