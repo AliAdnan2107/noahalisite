@@ -82,3 +82,17 @@ a:hover {
     justify-content: space-evenly;
     align-items: center;
 }
+
+.JS2-1container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.JS2-2container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
