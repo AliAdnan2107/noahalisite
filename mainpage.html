@@ -19,11 +19,13 @@
         let isbold = false;
 
         function subHTML() {
-            document.getElementById("specialHTML").innerHTML = "BEGONE!! <br>";
+            document.getElementById("specialHTML").innerHTML = "BEGONE!! <br><button onclick='addHTML()'>I'm still standing!!?</button>";
         }
 
+        function addHTML() {
+            document.getElementById("specialHTML").innerHTML = "Welcome to NoahAliCollab <br>This is a project between Noah & Ali. <br> We are excited to share our work! <br><button onclick='subHTML()'>Wonder what this does?</button>";
+        }
         function addCSS() {
-            document.getElementById("RCSS").remove();
             if (isbold == false) {  
                 document.getElementById("specialCSS").style.fontWeight = "bold";
                 document.getElementById("specialCSS").style.color = "black";
@@ -47,14 +49,10 @@
                 document.getElementById("ResultNS").innerHTML = "That's Huge!!";
                 document.getElementById("ResultNS").style.color = "red";
                 document.getElementById("ResultNS").style.fontSize = "30px";
-                document.getElementById("RNS").remove();
-                document.getElementById("NumSize").remove();
             } else if (y < 10) {
                 document.getElementById("ResultNS").innerHTML = "That's Small!!";
                 document.getElementById("ResultNS").style.color = "blue";
                 document.getElementById("ResultNS").style.fontSize = "10px";
-                document.getElementById("RNS").remove();
-                document.getElementById("NumSize").remove();
             } else {
                 document.getElementById("ResultNS").innerHTML = "Please enter a valid number.";
                 document.getElementById("ResultNS").style.color = "";
@@ -69,12 +67,9 @@
             for (i=1; i<=x; i++) {
                 document.getElementById("ResultFL").innerHTML += "The number is " + i + "<br>";
             }
-            document.getElementById("RFL").remove();
-            document.getElementById("ForLoop").remove();
         }
 
         function DoLooper() {
-            document.getElementById("RDL").remove();
             do {
                 var x = prompt("Enter a number between 1 and 10");
                 var y = parseInt(x);
@@ -93,12 +88,44 @@
             for (let i = 0; i < NodeMap.length; i++) {
                 document.getElementById("ResultST").innerHTML += NodeMap[i].name + " = " + NodeMap[i].value + "<br>";
             }
-            document.getElementById("RST").remove();
             document.getElementById("SpecialText").innerHTML = "Oh... Not very special :(";
         }
 
         function ChangeText() {
-            document.body.getElementsByClassName("Funny")[0].style.color = "red";
+            if (document.body.getElementsByClassName("Funny")[0].style.color == "red") {
+                document.body.getElementsByClassName("Funny")[0].style.color = "orange";
+            } else if (document.body.getElementsByClassName("Funny")[0].style.color == "orange") {
+                document.body.getElementsByClassName("Funny")[0].style.color = "yellow";
+            } else if (document.body.getElementsByClassName("Funny")[0].style.color == "yellow") {
+                document.body.getElementsByClassName("Funny")[0].style.color = "green";
+            } else if (document.body.getElementsByClassName("Funny")[0].style.color == "green") {
+                document.body.getElementsByClassName("Funny")[0].style.color = "blue";
+            } else if (document.body.getElementsByClassName("Funny")[0].style.color == "blue") {
+                document.body.getElementsByClassName("Funny")[0].style.color = "purple";
+            } else if (document.body.getElementsByClassName("Funny")[0].style.color == "purple") {
+                document.body.getElementsByClassName("Funny")[0].style.color = "red";
+            } else {
+                document.body.getElementsByClassName("Funny")[0].style.color = "red";
+            }
+        }
+
+        function Querier() {
+            const QueryList = document.querySelectorAll(".Query");
+            QNum = prompt("Enter a number between 1 and 3");
+            QCol = prompt("What color do you want?");
+            QNum = parseInt(QNum);
+            if (QNum == 1) {
+                QueryList[0].style.color = QCol;
+            } else if (QNum == 2) {
+                QueryList[1].style.color = QCol;
+            } else if (QNum == 3) {
+                QueryList[2].style.color = QCol;
+            } else {
+                alert("Invalid Input; Please enter a number between 1 and 3.");
+            }
+        }
+        function kill() {
+            document.body.innerHTML = '';
         }
     </script>
 </head>
@@ -131,22 +158,22 @@
                 Special CSS Section <br>
                 This section is styled with CSS. <br>
                 We hope you enjoy the design! <br><br>
-                <button id="RCSS" onclick="addCSS()">Wonder what this does?</button>
+                <button onclick="addCSS()">Wonder what this does?</button>
             </p>
         </div>
-
-        <hr>
         
+        <hr>
+
         <div class="JS1container">
             <div class="JS1-1container">
                 <p><input type="NumSize" id="NumSize" placeholder="Enter a number"><br><br>
-                    <button id="RNS" onclick="NumberSizer()">Wonder what this does?</button></p>
+                <button onclick="NumberSizer()">Wonder what this does?</button></p>
                 <p id="ResultNS"></p>
             </div>
 
             <div class="JS1-2container">
                 <p><input type="ForLoop" id="ForLoop" placeholder="Enter a number"><br><br>
-                <button id="RFL" onclick="ForLooper()">Wonder what this does?</button></p>
+                <button onclick="ForLooper()">Wonder what this does?</button></p>
                 <p id="ResultFL"></p>
             </div>
         </div>
@@ -156,13 +183,13 @@
         <div class="JS2container">
             <div class="JS2-1container">
                 <p id="ResultDL"></p>
-                <button id="RDL" onclick="DoLooper()">Wonder what this does?</button></p>
+                <button onclick="DoLooper()">Wonder what this does?</button></p>
             </div>
 
             <div class="JS2-2container">
                 <p id="SpecialText" style="color:white">
                     Very Special Text!!</p>
-                <button id="RST" onclick="ElementInfo()">I wonder how special?</button>
+                <button onclick="ElementInfo()">I wonder how special?</button>
                 <p id="ResultST"></p>
             </div>
         </div>
@@ -171,14 +198,55 @@
 
         <div class="JS3container">
             <div class="JS3-1container">
-                <p class="Funny" style="color:white">function ChangeText() {<br>
+                    <p class="Funny" style="color:white">function ChangeText() {<br>
                     document.body.getElementsByClassName("Funny")[0].style.color = "red";<br>
                 }</p>
-                <button id="RCL" onclick="ChangeText()">Hm?</button>
+                <button onclick="ChangeText()">Hm?</button>
             </div>
         </div>
 
-       <hr>
+        <hr>
+
+        <div class="JS4container">
+            <p class="Query">One</p>
+            <p class="Query">Two</p>
+            <p class="Query">Three</p>
+        </div>
+        <button onclick="Querier()">Wonder what this does?</button>
+
+        <hr>
+
+        <h1>MINIGAME TIME</h1>
+        <div class="minigame1">
+            <p class="trap" onmouseenter="kill()">~~~~~~~~~~~~~~~~~~~~~~~</p>
+            <p class="trap" onmouseenter="kill()">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+        </div>
+        <h3>How was level 1???</h3>
+        <br><br><br><br><br><br><br><br>
+        <div class="minigame2">
+            <p class="trap" onmouseenter="kill()">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+            <p class="trap" onmouseenter="kill()">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+        </div>
+        <h3>Oh no, what now???</h3>
+        <br><br><br><br><br><br><br><br>
+
+        <p class="trap" onmouseenter="kill()">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+        <h3>DIE!</h3>
+        <br><br><br><br><br><br><br><br>
+
+        <p class="trap" onmouseenter="kill()">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+        <p class="trap" onmouseenter="kill()">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+        <p class="trap" onmouseenter="kill()">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+        <p class="trap" onmouseenter="kill()">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+        <p class="trap" onmouseenter="kill()">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+        <p class="trap" onmouseenter="kill()">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+        <p class="trap" onmouseenter="kill()">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+        <p class="trap" onmouseenter="kill()">~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</p>
+        <br><br><br><br><br><br><br><br>
+        <h3>GG.</h3><br>
+
+        <hr onmouseenter="kill()">
+
 
     </div>
 </body>
