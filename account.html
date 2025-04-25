@@ -5,6 +5,7 @@
     <meta name="author" content="Noah Rashed, Ali Adnan">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript" src="script.js"></script>
     
     <title>NoahAliCollab-Account</title>
 </head>
@@ -16,14 +17,15 @@
             <ul>
                 <li><a href="../noahalisite/mainpage.html">Home</a></li>
                 <li><a href="../noahalisite/account.html">Account</a></li>
-                <li><a href="#">Item 3</a></li>
-                <li><a href="#">Item 4</a></li>
+                <li><a href="../noahalisite/minigame.html">Minigame</a></li>
+                <li><a href="../noahalisite/forms.html">Forms</a></li>
                 <li><a href="#">Item 5</a></li>
                 <li><a href="#">Item 6</a></li>
                 <li><a href="#">Item 7</a></li>
                 <li><a href="#">Item 8</a></li>
             </ul>
         </nav>
+        
         <div class="login">
             <h1>Account</h1>
             <form action="login.php" method="post">
@@ -31,6 +33,7 @@
                 <input type="text" id="username" name="username"><br><br>
                 <label for="password">Password:</label><br>
                 <input type="password" id="password" name="password"><br><br>
+                <input type="checkbox" id="showpassword" onclick="showPassword()">Show Password<br><br>
                 <input type="submit" value="Login">
             </form>
             <p>Don't have an account?</p>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script type="text/javascript" src="script.js"></script>
     
-    <title>NoahAliCollab-Account</title>
+    <title>NoahAliCollab</title>
 </head>
 
 <body>
@@ -25,21 +25,22 @@
                 <li><a href="#">Item 8</a></li>
             </ul>
         </nav>
-        
-        <div class="register">
-            <h1>Register</h1>
-            <form action="register.php" method="post" onsubmit="storeUserData(event)">
-                <label for="email">Email:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-                <label for="username">Username:</label><br>
-                <input type="text" id="username" name="username" required><br><br>
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" required><br><br>
-                <input type="checkbox" id="showpassword" onclick="showPassword()">Show Password<br><br>
-                <input type="submit" value="Register">
+
+        <br>
+
+        <div>
+            <form class="form1">
+                <label for="addBorder">Add Border</label><br>
+                <input type="checkbox" id="addBorder" name="addBorder" onclick="addBorder()"><br><br>
+                
+                <label for="borderStyleSolid">Border Style</label><br>
+                <input type="radio" id="borderStyleSolid" name="borderStyle" value="solid" onclick="changeBorderStyle()">Solid<br>
+                <input type="radio" id="borderStyleDashed" name="borderStyle" value="dashed" onclick="changeBorderStyle()">Dashed<br>
+                <input type="radio" id="borderStyleDotted" name="borderStyle" value="dotted" onclick="changeBorderStyle()">Dotted<br><br>
+                
+                <label for="borderWidth">Border Width</label><br>
+                <input type="text" id="borderWidth" name="borderWidth"><br><br>
             </form>
-            <p>Already have an account?</p>
-            <a href="account.html">Login here</a>
         </div>
     </div>
 </body>

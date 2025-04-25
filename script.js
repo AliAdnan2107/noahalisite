@@ -106,6 +106,28 @@ function Querier() {
         alert("Invalid Input; Please enter a number between 1 and 3.");
     }
 }
-/**function kill() {
+
+function kill() {
     document.body.innerHTML = '';
-}**/
+}
+
+function showPassword() {
+    const passwordField = document.getElementById('password');
+    if (passwordField.type == 'password') {
+        passwordField.type = 'text';
+    } else {
+        passwordField.type = 'password';
+    }
+}
+
+function storeUserData(event) {
+    event.preventDefault();
+    const email = document.getElementById('email').value;
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    const userData = { email, username, password };
+    localStorage.setItem('userData', JSON.stringify(userData));
+
+    alert('Registration successful!');
+}
